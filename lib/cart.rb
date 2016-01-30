@@ -10,11 +10,7 @@ class Cart
   end
 
   def total
-    sum = 0
-    @items.each do |item|
-      sum += item.price
-    end
-    sum
+    @items.inject(0) { | result, item| result + item.price }
   end
 
 end
