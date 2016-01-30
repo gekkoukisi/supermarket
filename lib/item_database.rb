@@ -3,20 +3,15 @@ require 'item.rb'
 class ItemDatabase
 
   def initialize
-    @items = []
+    @items = {}
   end
   
   def add(item)
-    @items << item 
+    @items[item.name] = item
   end
 
   def find(name)
-    @items.each do |item|
-      if name == item.name 
-        return item
-      end
-    end
-    nil
+    @items[name]
   end
 
 end
